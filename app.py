@@ -88,9 +88,9 @@ if st.button("Estimate My Risk"):
     st.markdown(f"### 🧪 Estimated Risk Score: **{proba*100:.1f}%**")
 
     # Human-friendly interpretation
-    if proba < 0.4:
+    if proba < 0.7:
         st.success("This score suggests a low risk profile based on your input. Keep up your healthy habits!")
-    elif proba < 0.7:
+    elif proba < 0.9:
         st.warning("This score is in the moderate range. While it’s not alarming, it may be worth keeping an eye on insulin, lifestyle, and body composition.")
     else:
         st.info("This score is elevated. It doesn’t mean you have diabetes, but it suggests early signs of metabolic strain that may be worth exploring with a professional.")
