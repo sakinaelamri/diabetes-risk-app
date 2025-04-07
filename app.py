@@ -50,10 +50,10 @@ pedigree = dpf_map[dpf_option]
 # Feature engineering with caps
 ins_gluc_ratio = insulin / glucose
 bmi_age_ratio = bmi / age
-bp_skin = min(bp * skinfold, 1000)
+bp_skin = min(bp * skinfold, 400)
 metabolic_stress = min(bmi * ins_gluc_ratio, 25)
-ins_age = min(insulin * age, 1500)
-complex_stress = min((bmi * insulin) / (skinfold + 1), 40)
+ins_age = min(insulin * age, 500)
+complex_stress = min((bmi * insulin) / (skinfold + 1), 15)
 
 st.markdown("---")
 if st.button("Estimate My Risk"):
@@ -63,9 +63,9 @@ if st.button("Estimate My Risk"):
 
     st.markdown(f"### 🧪 Estimated Risk Score: **{proba*100:.1f}%**")
 
-    if proba < 0.6:
+    if proba < 0.7:
         st.success("Low risk – no immediate concern.")
-    elif proba < 0.8:
+    elif proba < 0.9:
         st.warning("Borderline – something to monitor over time.")
     else:
         st.info("High signal – worth professional discussion.")
