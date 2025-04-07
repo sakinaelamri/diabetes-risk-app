@@ -50,10 +50,10 @@ pedigree = dpf_map[dpf_option]
 # Feature engineering with caps
 ins_gluc_ratio = insulin / glucose
 bmi_age_ratio = bmi / age
-bp_skin = min(bp * skinfold, 400)
-metabolic_stress = min(bmi * ins_gluc_ratio, 25)
-ins_age = min(insulin * age, 500)
-complex_stress = min((bmi * insulin) / (skinfold + 1), 15)
+bp_skin = min(bp * skinfold, 10)
+metabolic_stress = min(bmi * ins_gluc_ratio, 2)
+ins_age = min(insulin * age, 30)
+complex_stress = min((bmi * insulin) / (skinfold + 1), 1)
 
 st.markdown("---")
 if st.button("Estimate My Risk"):
